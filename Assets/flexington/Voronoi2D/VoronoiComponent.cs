@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using flexington.Tools;
 using UnityEngine;
 
-namespace flexington.Voronoi
+namespace flexington.Voronoi2D
 {
     [RequireComponent(typeof(SpriteRenderer))]
     public class VoronoiComponent : MonoBehaviour

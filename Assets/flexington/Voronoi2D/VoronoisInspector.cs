@@ -3,10 +3,10 @@ using UnityEditor;
 using System;
 using System.Linq;
 
-namespace flexington.Voronoi
+namespace flexington.Voronoi2D
 {
     [CustomEditor(typeof(VoronoiComponent))]
-    public class VoronoisInspector : Editor
+    public class VoronoiInspector : Editor
     {
         public VoronoiComponent Target
         {
