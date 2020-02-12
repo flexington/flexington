@@ -22,14 +22,14 @@ namespace flexington.Voronoi
 
         private void OnSceneGUI()
         {
-            if (_event == null) _event = Event.current;
-            Vector3 mousePosition = _event.mousePosition;
-            Vector2 position = HandleUtility.GUIPointToWorldRay(mousePosition).origin;
+            // if (_event == null) _event = Event.current;
+            // Vector3 mousePosition = _event.mousePosition;
+            // Vector2 position = HandleUtility.GUIPointToWorldRay(mousePosition).origin;
 
-            if (_event.type == EventType.MouseDown && _event.button == 0)
-            {
-                Target.AddNewRegion(position);
-            }
+            // if (_event.type == EventType.MouseDown && _event.button == 0)
+            // {
+            //     Target.AddNewRegion(position);
+            // }
 
         }
 
@@ -39,22 +39,22 @@ namespace flexington.Voronoi
 
             if (GUILayout.Button("Generate and Simulate"))
             {
-
+                Target.Start();
             }
 
             EditorGUILayout.BeginHorizontal();
             if (GUILayout.Button("Generate"))
             {
-                Target.Seed = DateTime.Now.ToString();
-                Target.InitRegions();
-                Target.GenerateTexture();
-                Target.ApplyTexture();
+                // Target.Seed = DateTime.Now.ToString();
+                // Target.InitRegions();
+                // Target.GenerateTexture();
+                // Target.ApplyTexture();
             }
             if (GUILayout.Button("Grow"))
             {
-                Target.Grow();
-                Target.GenerateTexture();
-                Target.ApplyTexture();
+                // Target.Grow();
+                // Target.GenerateTexture();
+                // Target.ApplyTexture();
             }
 
             EditorGUILayout.EndHorizontal();
