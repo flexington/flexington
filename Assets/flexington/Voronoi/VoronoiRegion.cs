@@ -143,29 +143,29 @@ namespace flexington.Voronoi
         /// If one or more of the sides overlap, the corresponding property
         /// (GrowTop, GrowBottom, GrowLeft, GrowRight) will be set to false
         /// </summary>
-        public void Overlaps(Rect rect)
+        public void Overlaps(Vector2 size)
         {
             // Top
-            if (_rect.xMax > rect.xMax)
+            if (_rect.xMax > size.x)
             {
                 GrowTop = false;
                 _rect.xMax--;
             }
 
             //Bottom
-            if (_rect.xMin < rect.xMin)
+            if (_rect.xMin < 0)
             {
                 GrowBottom = false;
                 _rect.xMin++;
             }
 
             // Left
-            if (_rect.yMin < rect.yMin)
+            if (_rect.yMin < 0)
             {
                 GrowLeft = false;
                 _rect.yMin++;
             }
-            if (_rect.yMax > rect.xMax)
+            if (_rect.yMax > size.y)
             {
                 GrowRight = false;
                 _rect.yMax--;

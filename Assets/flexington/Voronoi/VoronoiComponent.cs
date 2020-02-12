@@ -58,7 +58,7 @@ namespace flexington.Voronoi
             if (_texture == null) _texture = new Texture2D(_size.x, _size.y);
             if (_renderer.sprite == null) _renderer.sprite = Sprite.Create(_texture, new Rect(0, 0, _size.x, _size.y), Vector2.one * 0.5f);
 
-            _voronoi = new VoronoiDiagram(_numberOfRegions, _renderer.sprite, _size, _seed);
+            _voronoi = new VoronoiDiagram(_numberOfRegions, _size, _seed);
         }
 
         /// <summary>

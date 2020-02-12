@@ -52,18 +52,11 @@ namespace flexington.Voronoi
         Texture2D _texture;
 
         /// <summary>
-        /// Reference to the spite used
-        /// </summary>
-        private Sprite _sprite;
-
-        /// <summary>
         /// Create a new Voronoi Diagram
         /// </summary>
-        public VoronoiDiagram(int numberOfRegions, Sprite sprite, Vector2Int size = default, string seed = default)
+        public VoronoiDiagram(int numberOfRegions, Vector2Int size = default, string seed = default)
         {
             _numberOfRegions = numberOfRegions;
-
-            _sprite = sprite;
 
             if (size == default) size = new Vector2Int(_numberOfRegions * 15, _numberOfRegions * 15);
             _size = size;
@@ -111,7 +104,7 @@ namespace flexington.Voronoi
                         if (i == j) continue;
                         region.Overlaps(_regions[j]);
                     }
-                    region.Overlaps(_sprite.rect);
+                    region.Overlaps(_size);
                 }
             }
         }
