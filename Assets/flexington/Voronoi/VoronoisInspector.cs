@@ -37,33 +37,16 @@ namespace flexington.Voronoi
         {
             base.OnInspectorGUI();
 
+            EditorGUILayout.BeginHorizontal();
             if (GUILayout.Button("Generate and Simulate"))
             {
                 Target.Start();
             }
-
-            EditorGUILayout.BeginHorizontal();
-            if (GUILayout.Button("Generate"))
-            {
-                // Target.Seed = DateTime.Now.ToString();
-                // Target.InitRegions();
-                // Target.GenerateTexture();
-                // Target.ApplyTexture();
-            }
-            if (GUILayout.Button("Grow"))
-            {
-                // Target.Grow();
-                // Target.GenerateTexture();
-                // Target.ApplyTexture();
-            }
-
-            EditorGUILayout.EndHorizontal();
-
             if (GUILayout.Button("Reset"))
             {
                 Target.Reset();
             }
-
+            EditorGUILayout.EndHorizontal();
         }
     }
 }

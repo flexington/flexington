@@ -6,31 +6,52 @@ using UnityEngine;
 
 namespace flexington.Voronoi
 {
+    [RequireComponent(typeof(SpriteRenderer))]
     public class VoronoiComponent : MonoBehaviour
     {
+        /// <summary>
+        /// The Size of the Sprite
+        /// </summary>
         [SerializeField] private Vector2Int _size;
 
-
+        /// <summary>
+        /// Number of different regions
+        /// </summary>
         [SerializeField] private int _numberOfRegions;
 
-
+        /// <summary>
+        /// The seed for the random number generator
+        /// </summary>
         [SerializeField] private string _seed;
-        public string Seed
-        {
-            get { return _seed; }
-            set { _seed = value; }
-        }
 
+        /// <summary>
+        /// List of all Voronoi Regions
+        /// </summary>
         private List<VoronoiRegion> _regions;
 
+        /// <summary>
+        /// Field to hold the SpriteRenderer
+        /// </summary>
         private SpriteRenderer _renderer;
 
+        /// <summary>
+        /// Field to hold the Texture
+        /// </summary>
         private Texture2D _texture;
 
+        /// <summary>
+        /// Field to hold the Sprite
+        /// </summary>
         private Sprite _sprite;
 
-
+        /// <summary>
+        /// Reference to the VoronoiDiagram class
+        /// </summary>
         private VoronoiDiagram _voronoi;
+
+        /// <summary>
+        /// Instantiate all components
+        /// </summary>
         private void Awake()
         {
             if (_renderer == null) _renderer = GetComponent<SpriteRenderer>();
@@ -40,15 +61,20 @@ namespace flexington.Voronoi
             _voronoi = new VoronoiDiagram(_numberOfRegions, _renderer.sprite, _size, _seed);
         }
 
+        /// <summary>
+        /// Simulate expansion of regions 
+        /// </summary>
         public void Start()
         {
             if (_voronoi == null) Awake();
             _voronoi.Simulate();
             _texture = _voronoi.GenerateTexture();
             ApplyTexture();
-
         }
 
+        /// <summary>
+        /// Apply the created texture to the SpriteRenderer
+        /// </summary>
         public void ApplyTexture()
         {
             if (_renderer == null) _renderer = GetComponent<SpriteRenderer>();
@@ -56,6 +82,9 @@ namespace flexington.Voronoi
             _renderer.sprite = _sprite;
         }
 
+        /// <summary>
+        /// Reset everything for a fresh restart
+        /// </summary>
         public void Reset()
         {
             if (_renderer == null) _renderer = GetComponent<SpriteRenderer>();
