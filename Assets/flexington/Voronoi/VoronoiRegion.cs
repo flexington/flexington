@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace flexington.Voronoi2D
+namespace flexington.Voronoi
 {
     public class VoronoiRegion
     {

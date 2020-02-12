@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using flexington.Tools;
 using UnityEngine;
 
-namespace flexington.Voronoi2D
+namespace flexington.Voronoi
 {
     /// <summary>
     /// Custom implementation of a Voronoi Diagram.
